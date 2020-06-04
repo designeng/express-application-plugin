@@ -24,7 +24,7 @@ function startServerFacet({ resolve, reject }, facet, wire) {
         resolve(app);
     }).on('error', async (error) => {
         if(isFunction(errorCallback)) await errorCallback(error);
-        reject(err);
+        reject(error);
     });
 
     server.setTimeout(timeout);
@@ -48,7 +48,7 @@ function createApplication({ resolve }, compDef, wire) {
     });
 }
 
-module.exports = function ExpressAppPlugin(options) {
+module.exports = function expressAppPlugin(options) {
     return {
         factories: {
             createApplication
