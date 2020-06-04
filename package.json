@@ -5,12 +5,12 @@
   "author": "Denis Savenok <denissavenok@gmail.com> (http://designeng.github.io/)",
   "main": "index.js",
   "scripts": {
-      "test": "./node_modules/mocha/bin/mocha test/index.js"
+    "test": "./node_modules/mocha/bin/mocha test/index.js"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
