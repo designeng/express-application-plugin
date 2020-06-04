@@ -1,6 +1,6 @@
 {
   "name": "express-application-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Express.js plugin for wire.js",
   "author": "Denis Savenok <denissavenok@gmail.com> (http://designeng.github.io/)",
   "main": "index.js",
@@ -17,5 +17,6 @@
     "chai": "^4.2.0",
     "mocha": "^7.2.0",
     "wire": "git://github.com/cujojs/wire.git#0.10.11"
-  }
+  },
+  "repository": "designeng/express-application-plugin"
 }
