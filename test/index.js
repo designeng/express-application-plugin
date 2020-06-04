@@ -62,7 +62,7 @@ before(async () => {
 });
 
 describe('Express app', () => {
-    it('should create', () => {
+    it('should be created', () => {
         expect(context.app).to.be.ok;
     });
 
