@@ -20,6 +20,10 @@ export default {
         createApplication: {
             useMiddlewares
         },
+        setExpressAppProperties: [
+            {name: 'someProp', reference: SOME_PROP},
+            {name: 'anotherProp', reference: ANOTHER_PROP},
+        ],
         server: {
             port: PORT,
             host: HOST,
