@@ -37,7 +37,7 @@ function startServerFacet({ resolve, reject }, facet, wire) {
 function setExpressAppProperties(resolver, facet, wire) {
     const app = facet.target;
     wire(facet.options).then(props => {
-        props.forEach(({ name, reference }) => app.set(name, reference));
+        if(Array.isArray(props)) props.forEach(({ name, reference }) => app.set(name, reference));
         resolver.resolve();
     });
 }
