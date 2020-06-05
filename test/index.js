@@ -6,6 +6,7 @@ const axios = require('axios');
 const HOST = 'localhost';
 const PORT = 3000;
 const BASE_TIMEOUT = 30000;
+const VERY_IMPORTANT_PROP = 'VERY_IMPORTANT_PROP';
 
 let context, active;
 
@@ -25,6 +26,9 @@ const spec = {
         createApplication: {
             useMiddlewares
         },
+        setExpressAppProperties: [
+            {name: 'importantProp', reference: VERY_IMPORTANT_PROP}
+        ],
         server: {
             port: PORT,
             host: HOST,
@@ -64,6 +68,11 @@ before(async () => {
 describe('Express app', () => {
     it('should be created', () => {
         expect(context.app).to.be.ok;
+    });
+
+    it('should expose property', async () => {
+        const prop = context.app.get('importantProp');
+        expect(prop).to.equal(VERY_IMPORTANT_PROP);
     });
 
     it('should response on route request', async () => {
