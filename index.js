@@ -34,6 +34,14 @@ function startServerFacet({ resolve, reject }, facet, wire) {
     app.set('server', server);
 }
 
+function setExpressAppProperties(resolver, facet, wire) {
+    const app = facet.target;
+    wire(facet.options).then(props => {
+        props.forEach(({ name, reference }) => app.set(name, reference));
+        resolver.resolve();
+    });
+}
+
 function createApplication({ resolve }, compDef, wire) {
     if (!compDef.options) {
         throw new Error('Please set true value to create Express application.');
@@ -56,6 +64,9 @@ module.exports = function expressAppPlugin(options) {
         facets: {
             server: {
                 ready: startServerFacet
+            },
+            setExpressAppProperties: {
+                'initialize:before': setExpressAppProperties
             }
         }
     }
