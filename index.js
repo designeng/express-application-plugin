@@ -43,7 +43,7 @@ function createApplication({ resolve }, compDef, wire) {
         useMiddlewares
     }) => {
         const app = express();
-        useMiddlewares.forEach(middleware => app.use(middleware));
+        if(Array.isArray(useMiddlewares)) useMiddlewares.forEach(middleware => app.use(middleware));
         resolve(app);
     });
 }

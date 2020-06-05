@@ -1,6 +1,6 @@
 {
   "name": "express-application-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Express.js plugin for wire.js",
   "author": "Denis Savenok <denissavenok@gmail.com> (http://designeng.github.io/)",
   "main": "index.js",
